@@ -55,3 +55,9 @@ Me especializo en soluciones digitales para pymes y emprendedores, combinando di
 git clone https://github.com/tuusuario/sistema-logistico.git
 cd sistema-logistico
 python app.py
+### Cloná y probá
+
+```bash
+git clone https://github.com/tuusuario/sistemas-fa.git
+cd sistemas-fa
+python app.py
