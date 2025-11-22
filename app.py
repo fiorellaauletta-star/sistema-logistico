@@ -1,14 +1,16 @@
 import os
 from flask import Flask, render_template, request
 from empresa import cargar_datos, guardar_datos, ventas, gastos, stock, clientes, proveedores
+
+app = Flask(__name__)
+
 @app.route('/')
 def home():
     return 'Hola desde Flask en Render'
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+from flask import Flask, render_template, request
 
+app = Flask(__name__)  # ESTA LÍNEA ES CLAVE
 
 @app.route('/ventas', methods=["GET", "POST"])
 def ver_ventas():
@@ -23,7 +25,9 @@ def ver_ventas():
             "precio_unitario": precio_unitario,
             "total": total
         })
-        # Actualizar stock
+        stock[producto] = stock.get(producto, 0) - cantidad
+        guardar_datos()
+    return render_template("ventas.html", ventas=ventas)
         stock[producto] = stock.get(producto, 0) - cantidad
         guardar_datos()
     return render_template("ventas.html", ventas=ventas)
@@ -50,7 +54,24 @@ def ver_resumen():
     total_gastos = sum(g["monto"] for g in gastos)
     ganancia = total_ventas - total_gastos
 
-    # Gastos por área
+    areas = {}
+for g in gastos:
+    area = g.get("area", "general")
+    areas[area] = areas.get(area, 0) + g["monto"]
+
+    return render_template(
+        "resumen.html",
+        total_ventas=total_ventas,
+        total_gastos=total_gastos,
+        ganancia=ganancia,
+        areas=areas
+    )
+    @app.route('/resumen')
+def ver_resumen():
+    total_ventas = sum(v["total"] for v in ventas)
+    total_gastos = sum(g["monto"] for g in gastos)
+    ganancia = total_ventas - total_gastos
+
     areas = {}
     for g in gastos:
         area = g.get("area", "general")
@@ -63,7 +84,4 @@ def ver_resumen():
         ganancia=ganancia,
         areas=areas
     )
-
-if __name__ == "__main__":
-    webbrowser.open("http://127.0.0.1:5000/")
-    app.run(debug=True)
+    
