@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <meta charset="UTF-8">
+    <title>Sistema empresarial de Logística</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Sistema Empresarial de Logística</h1>
+
+    <div class="icon-grid">
+        <a href="/ventas" class="icon-card">
+            <img src="{{ url_for('static', filename='ventas.png') }}" alt="Ventas">
+            <p>Ventas</p>
+        </a>
+        <a href="/gastos" class="icon-card">
+            <img src="{{ url_for('static', filename='gastos.png') }}" alt="Gastos">
+            <p>Gastos</p>
+        </a>
+        <a href="/resumen" class="icon-card">
+            <img src="{{ url_for('static', filename='resumen.png') }}" alt="Resumen">
+            <p>Resumen</p>
+        </a>
+    </div>
+
+    <script>
+    const fondos = [
+        "/static/fondo4.jpg",
+        "/static/fondo2.jpg",
+        "/static/fondo3.jpeg",
+    ];
+
+    let index = 0;
+
+    function cambiarFondo() {
+        document.body.style.backgroundImage = `url('${fondos[index]}')`;
+        index = (index + 1) % fondos.length;
+    }
+
+    window.onload = () => {
+        cambiarFondo();
+        setInterval(cambiarFondo, 5000);
+    };
+</script>
+
+
+</body>
+</html>

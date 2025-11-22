@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gastos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Registrar Gasto</h1>
+
+    <form method="POST" action="/gastos">
+        <label>Concepto:</label>
+        <input type="text" name="concepto" required>
+
+        <label>Monto:</label>
+        <input type="number" step="0.01" name="monto" required>
+
+        <label>Tipo:</label>
+        <select name="tipo">
+            <option value="fijo">Fijo</option>
+            <option value="variable">Variable</option>
+        </select>
+
+        <label>Área:</label>
+        <select name="area">
+            <option value="producción">Producción</option>
+            <option value="comercial">Comercial</option>
+            <option value="administración">Administración</option>
+            <option value="general">General</option>
+        </select>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    <h2>Listado de Gastos</h2>
+    <table>
+        <tr>
+            <th>Concepto</th>
+            <th>Monto</th>
+            <th>Tipo</th>
+            <th>Área</th>
+        </tr>
+        {% for g in gastos %}
+        <tr>
+            <td>{{ g.concepto }}</td>
+            <td>${{ g.monto }}</td>
+            <td>{{ g.tipo }}</td>
+            <td>{{ g.area }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Volver al inicio</a>
+</body>
+</html>

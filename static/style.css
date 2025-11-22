@@ -1,0 +1,155 @@
+/* Fondo inicial del sitio */
+body {
+    background-image: url("/static/fondo.jpg"); /* o la imagen que quieras */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-image 1s ease-in-out;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color:black;
+}
+
+
+
+
+
+/* Si querés un gradiente en vez de imagen, descomentá esta línea y comentá background-image arriba */
+/* body { background: linear-gradient(to right, #f9f9f9, #e0f7fa); } */
+
+/* Contraste para textos (sin mezclar propiedades del body) */
+h1, h2, p, label, td, th, a {
+    color: black;
+    text-shadow: 1px 1px 2px black; /* Podés bajar la sombra si el texto es oscuro */
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #00796b;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Subtítulos */
+h2 {
+    color: #004d40;
+    border-bottom: 2px solid #00796b;
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+/* Formularios */
+form {
+    background-color: #ffffff;
+    border: 2px solid #b2dfdb;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+    margin: 5px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #80cbc4;
+    border-radius: 5px;
+}
+
+/* Botones */
+button {
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+/* Listas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #e0f2f1;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* Grid de íconos */
+.icon-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.icon-card {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.icon-card img {
+    width: 100px;
+    height: 100px;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+}
+
+.icon-card:hover img {
+    transform: scale(1.2);
+}
+
+.icon-card:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.icon-card p {
+    margin-top: 10px;
+    font-weight: bold;
+    color:white;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1em;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+tr:last-child td {
+    font-weight: bold;
+    background-color: #f3e5f5;
+}

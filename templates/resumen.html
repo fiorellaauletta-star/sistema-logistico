@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resumen Financiero</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Resumen Financiero</h1>
+
+    <table>
+        <tr>
+            <th>Concepto</th>
+            <th>Monto</th>
+        </tr>
+        <tr>
+            <td>Total de Ventas</td>
+            <td>${{ total_ventas }}</td>
+        </tr>
+        <tr>
+            <td>Total de Gastos</td>
+            <td>${{ total_gastos }}</td>
+        </tr>
+        <tr>
+            <td><strong>Ganancia Neta</strong></td>
+            <td><strong>${{ ganancia }}</strong></td>
+        </tr>
+    </table>
+
+    <h2>Gastos por Área</h2>
+    <ul>
+        {% for area, total in areas.items() %}
+            <li>{{ area }}: ${{ total }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Volver al inicio</a>
+</body>
+</html>
