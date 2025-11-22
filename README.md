@@ -9,8 +9,7 @@ Incluye módulos de ventas, gastos y resumen financiero, con diseño visual prof
 
 🔹 **Backend:** Python + Flask  
 🔹 **Frontend:** HTML + CSS + Bootstrap  
-🔹 **Estilo visual:** Íconos Font Awesome + diseño responsive  
-🔹 **Compartible vía Ngrok para demos en vivo**
+🔹 **Estilo visual:** Íconos Font Awesome + diseño responsive
 
 ---
 
@@ -24,26 +23,11 @@ Incluye módulos de ventas, gastos y resumen financiero, con diseño visual prof
 
 ---
 
-## 🔗 Demo en vivo
-
-👉 [Ver demo en Ngrok](https://polished-ruiz-nonunstable.ngrok-free.dev)
-
----
-
-## 📸 Capturas del sistema
-
-| Ventas | Gastos | Resumen |
-|--------|--------|---------|
-| ![Ventas](static/captura-ventas.png) | ![Gastos](static/captura-gastos.png) | ![Resumen](static/captura-resumen.png) |
-
----
-
 ## 👩‍💻 Sobre mí
 
 Soy **Fiorella Auletta**, desarrolladora de sistemas web con enfoque visual y comercial.  
 Me especializo en soluciones digitales para pymes y emprendedores, combinando diseño, eficiencia y presentación profesional.
 
-📱 
 📧 Email: fiorella@example.com  
 🌐 LinkedIn: [linkedin.com/in/fiorella-auletta](https://linkedin.com/in/fiorella-auletta)
 
@@ -54,10 +38,4 @@ Me especializo en soluciones digitales para pymes y emprendedores, combinando di
 ```bash
 git clone https://github.com/tuusuario/sistema-logistico.git
 cd sistema-logistico
-python app.py
-### Cloná y probá
-
-```bash
-git clone https://github.com/tuusuario/sistemas-fa.git
-cd sistemas-fa
 python app.py
