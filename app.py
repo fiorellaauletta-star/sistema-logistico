@@ -1,22 +1,14 @@
+import os
 from flask import Flask, render_template, request
 from empresa import cargar_datos, guardar_datos, ventas, gastos, stock, clientes, proveedores
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
 @app.route('/')
 def home():
-    return render_template('index.html')
-import webbrowser
+    return 'Hola desde Flask en Render'
 
-app = Flask(__name__)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
 
-# Cargar datos al iniciar
-cargar_datos()
-
-@app.route('/')
-def index():
-    return render_template("index.html", ventas=ventas, gastos=gastos)
 
 @app.route('/ventas', methods=["GET", "POST"])
 def ver_ventas():
