@@ -13,6 +13,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)  # ESTA LÍNEA ES CLAVE
 
 @app.route('/ventas', methods=["GET", "POST"])
+@app.route('/ventas', methods=["GET", "POST"])
 def ver_ventas():
     if request.method == "POST":
         producto = request.form["producto"]
