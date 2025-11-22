@@ -12,9 +12,9 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)  # ESTA LÍNEA ES CLAVE
 
+
 @app.route('/ventas', methods=["GET", "POST"])
-@app.route('/ventas', methods=["GET", "POST"])
-def ver_ventas():
+    def ver_ventas():
     if request.method == "POST":
         producto = request.form["producto"]
         cantidad = int(request.form["cantidad"])
@@ -29,9 +29,7 @@ def ver_ventas():
         stock[producto] = stock.get(producto, 0) - cantidad
         guardar_datos()
     return render_template("ventas.html", ventas=ventas)
-        stock[producto] = stock.get(producto, 0) - cantidad
-        guardar_datos()
-    return render_template("ventas.html", ventas=ventas)
+
 
 @app.route('/gastos', methods=["GET", "POST"])
 def ver_gastos():
